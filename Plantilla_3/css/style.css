@@ -1,0 +1,172 @@
+:root
+{
+    --theme-color: #0769e9;
+    --background-color:#034574;
+    --background-color-box:#eee;
+    --text-color: white;
+    --navbar-shallow-color:#e5e5e5;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+html
+{
+    height: 100%;
+}
+
+
+
+.grid-conteiner
+{
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+    "sidebar"
+    "main"
+    "footer";
+}
+
+.grid-conteiner > *
+{
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+body
+{
+    font-family: 'Montserrat', sans-serif;
+    padding: 90px 20px 0;
+    min-height: 100%; 
+}
+
+.header
+{
+    grid-area: header;
+    background-color: var(--theme-color);
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nav
+{
+    grid-area: navbar;
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.nav-link
+{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.logo
+{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+}
+
+.nav-menu
+{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-item
+{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link
+{
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+.nav-menu-link:hover
+{
+    background-color: var(--background-color);
+    transition: 0.5s;
+}
+
+.sidebar
+{
+    grid-area: sidebar;
+    background-color: var(--background-color-box);
+}
+
+.main
+{
+    grid-area: main;
+    background-color: var(--background-color-box);
+}
+
+table
+{
+    background-color: white;
+    width: 600px;
+    border-collapse: collapse;
+    text-align: left;
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);    
+}
+
+th,td
+{
+    border: solid 1px black;
+    padding: 20px;
+}
+
+thead
+{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+tr:nth-child(even)
+{
+    background-color: #ddd;
+}
+@media (min-width: 600px)
+{
+    .grid-conteiner
+    {
+        grid-template: 
+        "sidebar main" auto
+        "footer footer"100px / 200px auto;
+    }
+}
+
+tr:hover td
+{
+    background-color: #4481d1;
+    color: white;
+}
+
+
+.footer
+{
+    grid-area: footer;
+    background-color: var(--theme-color);
+    color: var(--text-color); 
+    line-height: 70px;
+    height: 95px;  
+   
+}
